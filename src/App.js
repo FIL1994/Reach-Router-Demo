@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Router } from "@reach/router";
+import { injectState } from "freactal";
 
 import "material-design-lite/material.min.css";
 import "material-design-lite/material.min.js";
 
 import Header from "./components/Header";
 import Home from "./components/Home";
+import wrapComponentWithState from "./state";
 
 const Dash = () => <div>Dash</div>;
 
@@ -25,4 +27,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default wrapComponentWithState(injectState(App));
