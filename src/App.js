@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Router } from "@reach/router";
+
 import "material-design-lite/material.min.css";
 import "material-design-lite/material.min.js";
 
 import Header from "./components/Header";
+import Home from "./components/Home";
 
-const Home = () => <div>Home</div>;
 const Dash = () => <div>Dash</div>;
 
 class App extends Component {
