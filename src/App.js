@@ -1,7 +1,9 @@
-import React, { Component, Fragment } from "react";
-import { Router, Link } from "@reach/router";
+import React, { Component } from "react";
+import { Router } from "@reach/router";
+import "material-design-lite/material.min.css";
+import "material-design-lite/material.min.js";
 
-import "material-design-lite/dist/material.css";
+import Header from "./components/Header";
 
 const Home = () => <div>Home</div>;
 const Dash = () => <div>Dash</div>;
@@ -9,16 +11,15 @@ const Dash = () => <div>Dash</div>;
 class App extends Component {
   render() {
     return (
-      <Fragment>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="dashboard">Dashboard</Link>
-        </nav>
-        <Router>
-          <Home path="/" />
-          <Dash path="dashboard" />
-        </Router>
-      </Fragment>
+      <div className="mdl-layout mdl-js-layout">
+        <Header />
+        <main className="mdl-layout__content">
+          <Router>
+            <Home path="/" />
+            <Dash path="dashboard" />
+          </Router>
+        </main>
+      </div>
     );
   }
 }
