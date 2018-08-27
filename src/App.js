@@ -1,19 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Fragment } from "react";
+import { Router, Link } from "@reach/router";
+
+import "material-design-lite/dist/material.css";
+
+const Home = () => <div>Home</div>;
+const Dash = () => <div>Dash</div>;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Fragment>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="dashboard">Dashboard</Link>
+        </nav>
+        <Router>
+          <Home path="/" />
+          <Dash path="dashboard" />
+        </Router>
+      </Fragment>
     );
   }
 }
