@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { injectState } from "freactal";
 
 const Child = injectState(({ state, effects }) => (
-  <div style={{ margin: 50 }}>
+  <Fragment>
     Our counter is at: {state.counter}
     <br />
     <button
@@ -11,7 +11,7 @@ const Child = injectState(({ state, effects }) => (
     >
       Add One
     </button>
-  </div>
+  </Fragment>
 ));
 
 export default Child;

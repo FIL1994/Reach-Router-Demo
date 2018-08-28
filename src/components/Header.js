@@ -16,6 +16,9 @@ class Header extends Component {
               <Link to="/" className="mdl-navigation__link">
                 Home
               </Link>
+              <Link to="name" className="mdl-navigation__link">
+                Name
+              </Link>
               <Link to="dashboard" className="mdl-navigation__link">
                 Dashboard
               </Link>
@@ -27,6 +30,9 @@ class Header extends Component {
           <nav className="mdl-navigation">
             <Link to="/" className="mdl-navigation__link">
               Home
+            </Link>
+            <Link to="name" className="mdl-navigation__link">
+              Name
             </Link>
             <Link to="dashboard" className="mdl-navigation__link">
               Dashboard
