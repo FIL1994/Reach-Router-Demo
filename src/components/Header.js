@@ -2,6 +2,19 @@ import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
 import { Link } from "@reach/router";
 
+const NavLink = props => (
+  <Link
+    {...props}
+    getProps={({ isCurrent, location }) => {
+      // the object returned here is passed to the
+      // anchor element's props
+      return {
+        className: props.className + (isCurrent ? " is-active" : "")
+      };
+    }}
+  />
+);
+
 class Header extends Component {
   render() {
     return (
@@ -13,30 +26,30 @@ class Header extends Component {
             <div className="mdl-layout-spacer" />
 
             <nav className="mdl-navigation">
-              <Link to="/" className="mdl-navigation__link">
+              <NavLink to="/" className="mdl-layout__tab ">
                 Home
-              </Link>
-              <Link to="name" className="mdl-navigation__link">
+              </NavLink>
+              <NavLink to="name" className="mdl-layout__tab ">
                 Name
-              </Link>
-              <Link to="dashboard" className="mdl-navigation__link">
+              </NavLink>
+              <NavLink to="dashboard" className="mdl-layout__tab ">
                 Dashboard
-              </Link>
+              </NavLink>
             </nav>
           </div>
         </header>
         <div className="mdl-layout__drawer">
           <span className="mdl-layout-title">{this.props.appName}</span>
           <nav className="mdl-navigation">
-            <Link to="/" className="mdl-navigation__link">
+            <NavLink to="/" className="mdl-navigation__link">
               Home
-            </Link>
-            <Link to="name" className="mdl-navigation__link">
+            </NavLink>
+            <NavLink to="name" className="mdl-navigation__link">
               Name
-            </Link>
-            <Link to="dashboard" className="mdl-navigation__link">
+            </NavLink>
+            <NavLink to="dashboard" className="mdl-navigation__link">
               Dashboard
-            </Link>
+            </NavLink>
           </nav>
         </div>
       </Fragment>
